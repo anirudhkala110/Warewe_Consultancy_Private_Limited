@@ -1,0 +1,35 @@
+In this project i am using nodejs for the bakend and created the APIs as follow
+
+1 - Registeration for admin : app.post - '/api/register' : requirements-> const { name, email, password, cpassword } = req.body
+2 - Login for admin : app.post - '/api/login' : requirements-> const { email, password } = req.body
+3 - Get all data saved in Updates Table in the database : app.get - '/api/getAllUpdates'
+4 - Deleting the Data present in the Updates Table and also need the authentic person to delete the data, if you want to make it public just remove the checkAdminAuth
+    : app.delete - '/api/resources/:selectedResourceId', checkAdminAuth, async (req, res)
+5 - Updating the data already present in the Updates table in the database, only authentic person can delete, and if you want to make it public then remove the checkAdminAuth
+    : app.post - '/api/saveUpdate', checkAdminAuth,
+6 - Logout from the system : app.get - '/api/logout'
+
+These is the basic APIs which can directly work through the postman or whatever you wants to use but make sure to remove the "checkAdminAuth",
+so then their is no any authentication error while uploading the data.
+
+Also I am using MySQL for the database, but if you want me to use mongodb then i am provide you the another code with upgrades.
+
+Also include the dotenv file to provide the variable values such as:
+DATABASE = Database_name_by_which_you_had_created_Database_in_MySQL
+HOST = localhost
+USER = root
+PASS = Your_MySQL_Password
+PORT = 8096
+JWT_SECRET_KEY = Your_Own_screate_token_key
+
+
+## To run this project you just need to run following commands
+
+#### npm install
+Install Every module
+
+#### nodemon index.js or npm index.js
+to run the server 
+
+##Now all the APIs are active to perform your operation.
+
